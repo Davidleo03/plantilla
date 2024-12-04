@@ -6,14 +6,14 @@ const router = Router();
 
 router.get('/', (req, res) => res.redirect('/students'));
 
-router.get('/students', async (req, res) => {
+router.get('/students',  async (req, res) => {
     try {
-       // const students = await StudentModel.getStudents()
-    
-        res.render('students/index')
-    } catch (error) {
-        res.send(error)
+        const data = await StudentModel.getStudents()
+        //res.render('students/index');
+    } catch (e) {
+        
     }
+    
 })
 
 
