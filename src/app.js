@@ -17,13 +17,14 @@ app.set('views',  __dirname + '/views');
 app.use('/recursos', express.static(join(__dirname, 'public')));
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
 
 
 app.use('/', router);
 
 
-const port = 3000 || process.env.PORT;
+const port = 5000 || process.env.PORT;
 
 
 app.listen(port, () => console.log(`Server Running on port ${port}`))

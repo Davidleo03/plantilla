@@ -12,6 +12,17 @@
   border: solid black;
 }
 
+.form {
+  padding: 20px;
+  margin-left: 20%;
+  margin-top: 10%;
+  border-radius: 16px;
+  background-color: #195664f5;
+  color: #dee2e6;
+
+
+}
+
 
 .table th, .table td {
   padding: 15px;
@@ -23,6 +34,7 @@
 .table{
   margin-top: 40px;
   padding-top: 40px;
+  margin-bottom: 20px;
 }
 .student-list{
   padding-top: 40px;
@@ -53,6 +65,10 @@
   display: flex;
   justify-content: center;
   text-align: justify;
+}
+
+.content {
+  width: 100vh;
 }
 
 .btn-warning.btn-sm{

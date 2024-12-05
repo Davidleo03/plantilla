@@ -18,7 +18,7 @@
     <%- include("../templates/navbar") %>
     <section class="main">
     <section id="estudiantes" class="main">
-        <div class="container">
+        <div class="container content">
             <div class="title text-center mb-4">
                 <h2>Estudiantes</h2>
             </div>
@@ -27,7 +27,7 @@
            
                 <table class="table">
                     <div class="content ml-4 boton">
-                        <a href="#" class="btn btn-icon" style="background-color: #009688; color: white; margin-left: -100px;"> <!-- Color verde personalizado y margen negativo -->
+                        <a href="/student/crear" class="btn btn-icon" style="background-color: #009688; color: white; margin-left: -100px;"> <!-- Color verde personalizado y margen negativo -->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle icon me-2" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
@@ -52,25 +52,19 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody> 
+                        <% students.forEach( student => { %>
                         <tr>
-                            <td>Juan</td>
-                            <td>Pérez</td>
-                            <td>02455248</td>
+                            <td> <%= student.firstName %> </td>
+                            <td> <%= student.lastName %></td>
+                            <td> <%= student.DNI %></td>
                             <td>
-                                <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                                <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                                <a href="/student/<%= student.id %>" class="btn btn-success ">Editar</a>
+                                <a href="/student/eliminar/<%= student.id %>" class="btn btn-danger ">Eliminar</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>María</td>
-                            <td>López</td>
-                            <td>30254682</td>
-                            <td>
-                                <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                                <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
-                            </td>
-                        </tr>
+                        <% }) %>
+                        
                     </tbody>
                 </table>
                 
